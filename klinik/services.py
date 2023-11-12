@@ -1,4 +1,4 @@
-from firebase_config import pasien, rekap
+from firebase_config import pasien
 import random
 import string
 
@@ -19,8 +19,6 @@ class FireServices:
         }
         key = pasien.push().key
         pasien.child(key).set(data)
-        key = rekap.push().key
-        rekap.child(key).set(data)
         return unique_code
 
     def next_pasien():
@@ -29,3 +27,6 @@ class FireServices:
         if first_entry_pasien:
             pasien_ref = pasien.child(list(first_entry_pasien.keys())[0])
             pasien_ref.delete()
+
+    def delete_all_pasien():
+         pasien.delete()

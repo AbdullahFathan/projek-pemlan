@@ -112,6 +112,7 @@ class AppKlinik:
     def save_csv(self):
         file_name = 'rekap_antrian.csv'
         self.DataAntrian.save_to_csv(file_name)
+        FireServices.delete_all_pasien()
         self.window.quit()
 
     # TAMPILAN TAMBAH DAN NEXT PASIEN
