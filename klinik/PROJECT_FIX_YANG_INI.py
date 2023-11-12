@@ -2,6 +2,7 @@ import csv
 import tkinter as tk
 from PIL import ImageTk, Image
 from tkinter import messagebox
+from services import FireServices
 
 LOGO = "E:/Hal UB/Semester 5/Pemlan/sistem antri klinik/klinik/LOGO.png"
 
@@ -28,6 +29,7 @@ class DataAntrian:
     def next_pasien(self):
         if self.pasien_list:
             nomor_antrian, nama = self.pasien_list.pop(0)
+            FireServices.next_pasien()
             return nomor_antrian, nama
         return None
 
@@ -142,7 +144,10 @@ class AppKlinik:
             name = tambah_pasien.get()
 
             nomor_antrian = self.DataAntrian.add_pasien(name)
-            messagebox.showinfo("Informasi", f"Pasien {name} (Nomor Antrian: {nomor_antrian}) (ID: FDSA).")
+            id = FireServices.add_pasien(name, nomor_antrian)
+
+            #* ini pop up tampilin 
+            messagebox.showinfo("Informasi", f"Pasien {name} (Nomor Antrian: {nomor_antrian}) (ID: {id}).")
             if nomor_antrian is not None:
                 tambah_pasien.delete(0, tk.END)
                 self.update_listbox()
