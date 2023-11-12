@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin-top: 15px;
+  padding: 5px;
+  background-color: rgb(168 162 158);
+  border: none;
+  color: black;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 7px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+button:hover {
+  background-color: rgb(146, 142, 139);
+  color: white;
+}
+
+input {
+  padding: 6px;
+}
+
+input:focus {
+  outline: none;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+h4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+}
+
+.body-medium {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.current-queue {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-user {
+  width: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 45px;
+  background-color: rgb(255 255 255);
+  border-radius: 24px;
+}
+
+/* Mengatur tampilan untuk perangkat seluler */
+
+@media screen and (max-width: 480px) {
+  .box {
+    width: 70vw;
+  }
+
+  .form-user {
+    width: 70vw;
+  }
+}
+
+/* Mengatur tampilan untuk desktop */
+
+@media screen and (min-width: 481px) {
+  .box {
+    width: 85vh;
+  }
+
+  br {
+    display: none;
+  }
+
+  .form-user {
+    width: 75vh;
+  }
+}
