@@ -3,7 +3,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 from tkinter import messagebox
 
-LOGO = "LOGO.png"
+LOGO = "E:/Hal UB/Semester 5/Pemlan/sistem antri klinik/klinik/LOGO.png"
 
 # DATA PROCESS ANTRIAN
 class DataAntrian:
@@ -142,7 +142,7 @@ class AppKlinik:
             name = tambah_pasien.get()
 
             nomor_antrian = self.DataAntrian.add_pasien(name)
-            messagebox.showinfo("Informasi", f"Pasien Fathan (Nomor Antrian: 567) ID: 65.")
+            messagebox.showinfo("Informasi", f"Pasien {name} (Nomor Antrian: {nomor_antrian}) (ID: FDSA).")
             if nomor_antrian is not None:
                 tambah_pasien.delete(0, tk.END)
                 self.update_listbox()
