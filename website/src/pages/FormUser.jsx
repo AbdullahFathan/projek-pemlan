@@ -7,21 +7,21 @@ const FormUser = () => {
 
   const hanldeSubmit = (e) => {
     e.preventDefault();
-    navigate("/number");
+    navigate("/number", { state: { inputValue } });
   };
   return (
     <section className="center-screen">
       <div className="box">
         <h1>Selamat Datang</h1>
         <h4>
-          Masukan angka yang diberikan oleh <br />
+          Masukan ID yang diberikan oleh <br />
           Petugas klinik X
         </h4>
 
         <form className="form-user" onSubmit={hanldeSubmit}>
           <input
             type="text"
-            placeholder="Input angka"
+            placeholder="Input ID"
             value={inputValue}
             required
             onChange={(e) => setInputValue(e.target.value)}

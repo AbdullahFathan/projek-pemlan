@@ -1,17 +1,21 @@
 import "../index.css";
+import { useLocation } from "react-router-dom";
+import CurrentQueue from "../components/CurrentQueue";
+import UserQueue from "../components/UserQueue";
 
 const NumberQueue = () => {
+  const location = useLocation();
+  const inputValue = location.state ? location.state.inputValue : "";
+
   return (
     <section className="center-screen">
       <div className="box">
-        <p className="subtitle">Antrian Anda</p>
-        <p className="title">435</p>
-        <p className="body-medium">Antrian Saat ini</p>
-        <p className="current-queue">425</p>
-
+        <UserQueue inputValue={inputValue} />
+        <CurrentQueue />
         <p>Harap Sabar menunggu</p>
       </div>
     </section>
   );
 };
+
 export default NumberQueue;
